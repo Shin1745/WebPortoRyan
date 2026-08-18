@@ -1,194 +1,1189 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Agriyansyah | Portfolio</title>
+
+    <title>Muhammad Agriyansyah | Software Developer</title>
+
+    <meta name="description"
+          content="Muhammad Agriyansyah — Informatics Engineering graduate specializing in software development, AI, web applications, and backend systems.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        :root {
+            --bg: #08090d;
+            --bg-soft: #0e1016;
+            --card: #11141b;
+            --border: #222631;
+            --text: #f5f7fa;
+            --muted: #8d95a5;
+            --accent: #7c5cff;
+            --accent-light: #a78bfa;
+            --green: #36d399;
+            --blue: #60a5fa;
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-            margin-top: 40px;
-        }
-
-        .subtitle {
-            color: #666;
-        }
-
-        .card {
-            margin-bottom: 20px;
-        }
-
-        ul {
-            padding-left: 20px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
         a {
-            color: #0066cc;
+            color: inherit;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #777;
-            font-size: 14px;
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(124, 92, 255, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(54, 211, 153, 0.06),
+                    transparent 30%
+                );
+            z-index: -1;
         }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+
+            background: rgba(8, 9, 13, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-inner {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .logo span {
+            color: var(--accent-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--green);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .gradient {
+            background: linear-gradient(
+                90deg,
+                #fff,
+                var(--accent-light)
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+
+            font-weight: 600;
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 10px 30px rgba(124, 92, 255, 0.25);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        .btn-secondary:hover {
+            color: white;
+            border-color: var(--accent);
+        }
+
+
+        /* =========================
+           TERMINAL
+        ========================= */
+
+        .terminal {
+            background: #0b0d12;
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.4);
+
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 7px;
+            padding: 13px 15px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #444;
+        }
+
+        .terminal-body {
+            padding: 25px;
+
+            font-family: "JetBrains Mono", monospace;
+            font-size: 13px;
+        }
+
+        .terminal-line {
+            margin-bottom: 12px;
+        }
+
+        .purple {
+            color: var(--accent-light);
+        }
+
+        .green {
+            color: var(--green);
+        }
+
+        .blue {
+            color: var(--blue);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: var(--accent-light);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            letter-spacing: -1px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            padding: 30px;
+
+            border-radius: var(--radius);
+        }
+
+        .about-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            border-left: 1px solid var(--border);
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+            left: -36px;
+            top: 8px;
+
+            width: 10px;
+            height: 10px;
+
+            background: var(--accent);
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 5px rgba(124,92,255,0.1);
+        }
+
+        .timeline-date {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--green);
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .timeline h3 {
+            margin-bottom: 3px;
+        }
+
+        .timeline-company {
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .timeline ul {
+            color: var(--muted);
+            padding-left: 20px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            padding: 28px;
+
+            border-radius: var(--radius);
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(124,92,255,0.5);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .project-featured {
+            grid-column: span 2;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,92,255,0.12),
+                    rgba(17,20,27,1)
+                );
+        }
+
+        .project-number {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--accent-light);
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-group {
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            padding: 25px;
+            border-radius: var(--radius);
+        }
+
+        .skill-group h3 {
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            background: #191c25;
+            padding: 6px 10px;
+            border-radius: 7px;
+
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+
+            text-align: center;
+
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project-featured {
+                grid-column: span 1;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <h1>Muhammad Agriyansyah</h1>
 
-    <p class="subtitle">
-        Informatics Engineering Student | Fintech Data Entry Candidate
-    </p>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-    <p>
-        Bali, Indonesia |
-        <a href="mailto:youremail@example.com">jjbb3175@gmail.com</a> |
-        +62 878 6318 2426
-    </p>
+<nav>
 
-    <p>
-        <a href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/">LinkedIn</a> |
-        <a href="https://github.com/Shin1745/">GitHub</a>
-    </p>
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            MA<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                &gt; software_developer.exe
+            </div>
+
+            <h1>
+                Muhammad<br>
+                <span class="gradient">Agriyansyah.</span>
+            </h1>
+
+            <p class="hero-description">
+                Informatics Engineering graduate focused on
+                software development, AI/ML, backend systems,
+                and practical technology solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="btn btn-primary"
+                    href="#projects"
+                >
+                    View My Work
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://github.com/Shin1745"
+                    target="_blank"
+                >
+                    GitHub ↗
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/"
+                    target="_blank"
+                >
+                    LinkedIn ↗
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TERMINAL -->
+
+        <div class="terminal">
+
+            <div class="terminal-header">
+
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+
+            </div>
+
+            <div class="terminal-body">
+
+                <div class="terminal-line">
+                    <span class="purple">const</span>
+                    developer = {
+                </div>
+
+                <div class="terminal-line">
+                    &nbsp;&nbsp;name:
+                    <span class="green">
+                        "Muhammad Agriyansyah"
+                    </span>,
+                </div>
+
+                <div class="terminal-line">
+                    &nbsp;&nbsp;location:
+                    <span class="green">
+                        "Bali, Indonesia"
+                    </span>,
+                </div>
+
+                <div class="terminal-line">
+                    &nbsp;&nbsp;focus:
+                    <span class="green">
+                        "Software & AI"
+                    </span>,
+                </div>
+
+                <div class="terminal-line">
+                    &nbsp;&nbsp;coffee:
+                    <span class="blue">
+                        true
+                    </span>
+                </div>
+
+                <div class="terminal-line">
+                    };
+                </div>
+
+                <br>
+
+                <div class="terminal-line muted">
+                    // building useful things
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </header>
 
 
-<section>
-    <h2>About Me</h2>
+<!-- =========================
+     ABOUT
+========================= -->
 
-    <p>
-        Detail-oriented Informatics Engineering student at the Institut Bisnis dan Teknologi Indonesia (INSTIKI) with experience in software development, database management, and information systems. Seeking opportunities to contribute strong organizational skills, accuracy, and adaptability in fintech operations and data management roles.
-    </p>
-</section>
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            01 / ABOUT
+        </div>
+
+        <h2 class="section-title">
+            Who I am
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>
+                    Software Developer
+                </h3>
+
+                <p>
+                    I build web applications, backend systems,
+                    APIs, and database-driven solutions using
+                    technologies such as Java, PHP, Python,
+                    JavaScript, and MySQL.
+                </p>
+
+            </div>
 
 
-<section>
-    <h2>Education</h2>
+            <div class="about-card">
 
-    <div class="card">
-        <strong>Institut Bisnis dan Teknologi Indonesia (INSTIKI)</strong><br>
-        Bachelor's Degree in Informatics Engineering<br>
-        Expected Graduation: [August 2026]
+                <h3>
+                    AI & Problem Solver
+                </h3>
+
+                <p>
+                    I'm interested in applying AI and software
+                    engineering to practical problems. My recent
+                    work includes a real-time facial-expression
+                    based stress recognition system.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
 
-<section>
-    <h2>Experience</h2>
+<!-- =========================
+     EXPERIENCE
+========================= -->
 
-    <div class="card">
-        <strong>MBKM Intern – PT Dimata Sora Jayate</strong><br>
-        March 2025 – June 2025
+<section id="experience">
 
-        <ul>
-            <li>Contributed to the development of a Plant Management System using Java and MySQL.</li>
-            <li>Implemented pagination to improve data accessibility.</li>
-            <li>Enhanced mobile responsiveness of the application.</li>
-            <li>Assisted in database-related functionalities.</li>
-            <li>Supported the implementation of SHA-256 authentication.</li>
-        </ul>
+    <div class="container">
+
+        <div class="section-label">
+            02 / EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    MAR 2025 — JUN 2025
+                </div>
+
+                <h3>
+                    Software Developer Intern
+                </h3>
+
+                <div class="timeline-company">
+                    PT Dimata Sora Jayate
+                </div>
+
+                <ul>
+
+                    <li>
+                        Developed a Plant Management Information
+                        System using Java, JSP/Servlets, and MySQL.
+                    </li>
+
+                    <li>
+                        Implemented CRUD functionality,
+                        search, filtering, and pagination.
+                    </li>
+
+                    <li>
+                        Integrated web application modules
+                        with MySQL using JDBC.
+                    </li>
+
+                    <li>
+                        Performed testing, debugging,
+                        and database troubleshooting.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2022 — 2026
+                </div>
+
+                <h3>
+                    Informatics Engineering
+                </h3>
+
+                <div class="timeline-company">
+                    Institut Bisnis dan Teknologi Indonesia
+                    (INSTIKI)
+                </div>
+
+                <p class="muted">
+                    Bachelor's Degree in Informatics Engineering.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
 
-<section>
-    <h2>Projects</h2>
+<!-- =========================
+     PROJECTS
+========================= -->
 
-    <div class="card">
-        <strong>Real-Time Stress Detection System</strong>
+<section id="projects">
 
-        <ul>
-            <li>Developed a webcam-based stress detection system using CNN and fuzzy logic.</li>
-            <li>Utilized Python, TensorFlow, OpenCV, MediaPipe, and FastAPI.</li>
-            <li>Achieved approximately 92% validation accuracy.</li>
-        </ul>
+    <div class="container">
+
+        <div class="section-label">
+            03 / PROJECTS
+        </div>
+
+        <h2 class="section-title">
+            Things I've built
+        </h2>
+
+
+        <div class="projects">
+
+
+            <!-- FEATURED -->
+
+            <article class="project project-featured">
+
+                <div class="project-number">
+                    FEATURED PROJECT / 01
+                </div>
+
+                <h3>
+                    Real-Time Stress Recognition AI
+                </h3>
+
+                <p>
+                    A real-time AI application that analyzes
+                    facial expressions through a webcam to
+                    estimate stress levels. The system combines
+                    CNN-based image classification with MediaPipe
+                    face detection, fuzzy logic, smoothing,
+                    hysteresis, and a FastAPI backend.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">CNN</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">MediaPipe</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">Chart.js</span>
+                    <span class="tag">Fuzzy Logic</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 02
+                </div>
+
+                <h3>
+                    Plant Management Information System
+                </h3>
+
+                <p>
+                    A web-based business information system
+                    developed during my internship to manage
+                    plant-related operational data.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Java</span>
+                    <span class="tag">JSP</span>
+                    <span class="tag">Servlets</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">JDBC</span>
+                    <span class="tag">Bootstrap</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 03
+                </div>
+
+                <h3>
+                    Web Portfolio
+                </h3>
+
+                <p>
+                    Personal developer portfolio built to
+                    showcase software engineering, AI,
+                    and web development projects.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">GitHub Pages</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </div>
+
 </section>
 
 
-<section>
-    <h2>Skills</h2>
+<!-- =========================
+     SKILLS
+========================= -->
 
-    <ul>
-        <li>Data Entry & Data Validation</li>
-        <li>Microsoft Excel</li>
-        <li>Google Sheets</li>
-        <li>Database Management (MySQL)</li>
-        <li>Java</li>
-        <li>Python</li>
-        <li>HTML/CSS</li>
-        <li>Attention to Detail</li>
-        <li>Time Management</li>
-        <li>Teamwork</li>
-    </ul>
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            04 / SKILLS
+        </div>
+
+        <h2 class="section-title">
+            My toolkit
+        </h2>
+
+
+        <div class="skills">
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Programming
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Java</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">PHP</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">SQL</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Web & Backend
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">Bootstrap</span>
+                    <span class="skill">Laravel</span>
+                    <span class="skill">JSP</span>
+                    <span class="skill">Servlets</span>
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">REST API</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    AI & Tools
+                </h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">TensorFlow</span>
+                    <span class="skill">Keras</span>
+                    <span class="skill">OpenCV</span>
+                    <span class="skill">MediaPipe</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">GitHub</span>
+                    <span class="skill">Docker</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<section>
-    <h2>Certifications</h2>
+<!-- =========================
+     CONTACT
+========================= -->
 
-    <ul>
-        <li>Certificate 1</li>
-        <li>Certificate 2</li>
-        <li>Certificate 3</li>
-    </ul>
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact">
+
+            <div class="section-label">
+                05 / CONTACT
+            </div>
+
+            <h2>
+                Let's build something.
+            </h2>
+
+            <p>
+                I'm currently open to software development,
+                AI/automation, backend, and web development
+                opportunities.
+            </p>
+
+            <div class="buttons"
+                 style="justify-content:center;">
+
+                <a
+                    class="btn btn-primary"
+                    href="mailto:jjbb3175@gmail.com"
+                >
+                    Email Me
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://github.com/Shin1745"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/"
+                    target="_blank"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-    <h2>Contact</h2>
 
-    <p>
-        Email: jjbb3175@gmail.com
-    </p>
-
-    <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/">
-            linkedin.com/in/muhammad-agriyansyah
-        </a>
-    </p>
-
-    <p>
-        GitHub:
-        <a href="https://github.com/Shin1745/">
-            github.com/Shin1745
-        </a>
-    </p>
-</section>
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-    © 2026 Muhammad Agriyansyah
+
+    <div class="container">
+
+        © 2026 Muhammad Agriyansyah · Built with HTML & CSS
+
+    </div>
+
 </footer>
+
 
 </body>
 </html>
+```
