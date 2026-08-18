@@ -16,11 +16,6 @@
           rel="stylesheet">
 
     <style>
-
-        /* =========================
-           GLOBAL
-        ========================= */
-
         :root {
             --bg: #08090d;
             --bg-soft: #0e1016;
@@ -41,9 +36,7 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: var(--bg);
@@ -53,20 +46,12 @@
             overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        a { color: inherit; text-decoration: none; }
 
         .container {
             width: min(1100px, 90%);
             margin: auto;
         }
-
-
-        /* =========================
-           BACKGROUND
-        ========================= */
 
         body::before {
             content: "";
@@ -74,23 +59,10 @@
             inset: 0;
             pointer-events: none;
             background:
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(124, 92, 255, 0.12),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 70%,
-                    rgba(54, 211, 153, 0.06),
-                    transparent 30%
-                );
+                radial-gradient(circle at 15% 15%, rgba(124, 92, 255, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 70%, rgba(54, 211, 153, 0.06), transparent 30%);
             z-index: -1;
         }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
 
         nav {
             position: fixed;
@@ -98,16 +70,13 @@
             left: 0;
             width: 100%;
             z-index: 100;
-
             background: rgba(8, 9, 13, 0.75);
             backdrop-filter: blur(15px);
-
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .nav-inner {
             height: 70px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -119,9 +88,7 @@
             font-size: 18px;
         }
 
-        .logo span {
-            color: var(--accent-light);
-        }
+        .logo span { color: var(--accent-light); }
 
         .nav-links {
             display: flex;
@@ -135,21 +102,12 @@
             transition: 0.2s;
         }
 
-        .nav-links a:hover {
-            color: white;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
+        .nav-links a:hover { color: white; }
 
         .hero {
             min-height: 100vh;
-
             display: flex;
             align-items: center;
-
             padding-top: 80px;
         }
 
@@ -175,12 +133,7 @@
         }
 
         .gradient {
-            background: linear-gradient(
-                90deg,
-                #fff,
-                var(--accent-light)
-            );
-
+            background: linear-gradient(90deg, #fff, var(--accent-light));
             -webkit-background-clip: text;
             color: transparent;
         }
@@ -201,21 +154,16 @@
         .btn {
             padding: 12px 20px;
             border-radius: 10px;
-
             font-weight: 600;
             font-size: 14px;
-
             transition: 0.25s;
         }
 
-        .btn-primary {
-            background: var(--accent);
-        }
+        .btn-primary { background: var(--accent); }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow:
-                0 10px 30px rgba(124, 92, 255, 0.25);
+            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.25);
         }
 
         .btn-secondary {
@@ -228,20 +176,11 @@
             border-color: var(--accent);
         }
 
-
-        /* =========================
-           TERMINAL
-        ========================= */
-
         .terminal {
             background: #0b0d12;
             border: 1px solid var(--border);
-
             border-radius: var(--radius);
-
-            box-shadow:
-                0 25px 70px rgba(0,0,0,0.4);
-
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
             overflow: hidden;
         }
 
@@ -249,7 +188,6 @@
             display: flex;
             gap: 7px;
             padding: 13px 15px;
-
             border-bottom: 1px solid var(--border);
         }
 
@@ -262,39 +200,18 @@
 
         .terminal-body {
             padding: 25px;
-
             font-family: "JetBrains Mono", monospace;
             font-size: 13px;
         }
 
-        .terminal-line {
-            margin-bottom: 12px;
-        }
+        .terminal-line { margin-bottom: 12px; }
 
-        .purple {
-            color: var(--accent-light);
-        }
+        .purple { color: var(--accent-light); }
+        .green { color: var(--green); }
+        .blue { color: var(--blue); }
+        .muted { color: var(--muted); }
 
-        .green {
-            color: var(--green);
-        }
-
-        .blue {
-            color: var(--blue);
-        }
-
-        .muted {
-            color: var(--muted);
-        }
-
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        section {
-            padding: 100px 0;
-        }
+        section { padding: 100px 0; }
 
         .section-label {
             color: var(--accent-light);
@@ -309,11 +226,6 @@
             letter-spacing: -1px;
         }
 
-
-        /* =========================
-           ABOUT
-        ========================= */
-
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -323,24 +235,12 @@
         .about-card {
             background: var(--card);
             border: 1px solid var(--border);
-
             padding: 30px;
-
             border-radius: var(--radius);
         }
 
-        .about-card h3 {
-            margin-bottom: 12px;
-        }
-
-        .about-card p {
-            color: var(--muted);
-        }
-
-
-        /* =========================
-           EXPERIENCE
-        ========================= */
+        .about-card h3 { margin-bottom: 12px; }
+        .about-card p { color: var(--muted); }
 
         .timeline {
             border-left: 1px solid var(--border);
@@ -354,19 +254,14 @@
 
         .timeline-item::before {
             content: "";
-
             position: absolute;
             left: -36px;
             top: 8px;
-
             width: 10px;
             height: 10px;
-
             background: var(--accent);
             border-radius: 50%;
-
-            box-shadow:
-                0 0 0 5px rgba(124,92,255,0.1);
+            box-shadow: 0 0 0 5px rgba(124,92,255,0.1);
         }
 
         .timeline-date {
@@ -376,10 +271,7 @@
             margin-bottom: 5px;
         }
 
-        .timeline h3 {
-            margin-bottom: 3px;
-        }
-
+        .timeline h3 { margin-bottom: 3px; }
         .timeline-company {
             color: var(--muted);
             margin-bottom: 12px;
@@ -390,11 +282,6 @@
             padding-left: 20px;
         }
 
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
         .projects {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -404,57 +291,20 @@
         .project {
             background: var(--card);
             border: 1px solid var(--border);
-
             padding: 28px;
-
             border-radius: var(--radius);
-
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .project:hover {
             transform: translateY(-5px);
-
             border-color: rgba(124,92,255,0.5);
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,0.25);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
         }
 
         .project-featured {
             grid-column: span 2;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(124,92,255,0.12),
-                    rgba(17,20,27,1)
-                );
-        }
-
-        .project-img-wrap {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
-            background: #090a0f;
-        }
-
-        .project-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .project:hover .project-img-wrap img {
-            transform: scale(1.03);
-            opacity: 1;
+            background: linear-gradient(135deg, rgba(124,92,255,0.12), rgba(11,13,18,1));
         }
 
         .project-number {
@@ -478,31 +328,26 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 20px;
         }
 
         .tag {
             padding: 5px 9px;
-
             border: 1px solid var(--border);
             border-radius: 7px;
-
             font-family: "JetBrains Mono", monospace;
             font-size: 11px;
-
             color: var(--muted);
         }
 
         .project-links {
+            margin-top: 20px;
             display: flex;
             gap: 15px;
-            border-top: 1px solid var(--border);
-            padding-top: 15px;
         }
 
         .project-link {
             font-family: "JetBrains Mono", monospace;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--accent-light);
             font-weight: 600;
             display: inline-flex;
@@ -517,10 +362,12 @@
             text-underline-offset: 4px;
         }
 
-
-        /* =========================
-           SKILLS
-        ========================= */
+        .nda-badge {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            color: var(--muted);
+            font-style: italic;
+        }
 
         .skills {
             display: grid;
@@ -531,14 +378,11 @@
         .skill-group {
             background: var(--card);
             border: 1px solid var(--border);
-
             padding: 25px;
             border-radius: var(--radius);
         }
 
-        .skill-group h3 {
-            margin-bottom: 15px;
-        }
+        .skill-group h3 { margin-bottom: 15px; }
 
         .skill-list {
             display: flex;
@@ -550,15 +394,9 @@
             background: #191c25;
             padding: 6px 10px;
             border-radius: 7px;
-
             font-size: 12px;
             color: var(--muted);
         }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
 
         .contact {
             text-align: center;
@@ -566,705 +404,286 @@
             margin: auto;
         }
 
-        .contact h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            color: var(--muted);
-            margin-bottom: 30px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
+        .contact h2 { font-size: 48px; margin-bottom: 20px; }
+        .contact p { color: var(--muted); margin-bottom: 30px; }
 
         footer {
             border-top: 1px solid var(--border);
             padding: 30px 0;
-
             text-align: center;
-
             color: var(--muted);
             font-size: 13px;
         }
 
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
         @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .project-featured {
-                grid-column: span 1;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-
+            .nav-links { display: none; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: 1fr; }
+            .project-featured { grid-column: span 1; }
+            .skills { grid-template-columns: 1fr; }
+            .hero h1 { letter-spacing: -2px; }
+            section { padding: 70px 0; }
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav>
-
     <div class="container nav-inner">
-
-        <a href="#" class="logo">
-            MA<span>.</span>
-        </a>
-
+        <a href="#" class="logo">MA<span>.</span></a>
         <ul class="nav-links">
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-
     </div>
-
 </nav>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <header class="hero">
-
     <div class="container hero-grid">
-
         <div>
-
-            <div class="eyebrow">
-                &gt; software_developer.exe
-            </div>
-
-            <h1>
-                Muhammad<br>
-                <span class="gradient">Agriyansyah.</span>
-            </h1>
-
+            <div class="eyebrow">&gt; software_developer.exe</div>
+            <h1>Muhammad<br><span class="gradient">Agriyansyah.</span></h1>
             <p class="hero-description">
-                Informatics Engineering graduate focused on
-                software development, AI/ML, backend systems,
-                and practical technology solutions.
+                Informatics Engineering graduate focused on software development, AI systems, backend architecture, and practical web solutions.
             </p>
-
             <div class="buttons">
-
-                <a
-                    class="btn btn-primary"
-                    href="#projects"
-                >
-                    View My Work
-                </a>
-
-                <a
-                    class="btn btn-secondary"
-                    href="https://github.com/Shin1745"
-                    target="_blank"
-                >
-                    GitHub ↗
-                </a>
-
-                <a
-                    class="btn btn-secondary"
-                    href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/"
-                    target="_blank"
-                >
-                    LinkedIn ↗
-                </a>
-
+                <a class="btn btn-primary" href="#projects">View My Work</a>
+                <a class="btn btn-secondary" href="https://github.com/Shin1745" target="_blank">GitHub ↗</a>
+                <a class="btn btn-secondary" href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/" target="_blank">LinkedIn ↗</a>
             </div>
-
         </div>
-
-
-        <!-- TERMINAL -->
 
         <div class="terminal">
-
             <div class="terminal-header">
-
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-
+                <div class="dot"></div> <div class="dot"></div> <div class="dot"></div>
             </div>
-
             <div class="terminal-body">
-
-                <div class="terminal-line">
-                    <span class="purple">const</span>
-                    developer = {
-                </div>
-
-                <div class="terminal-line">
-                    &nbsp;&nbsp;name:
-                    <span class="green">
-                        "Muhammad Agriyansyah"
-                    </span>,
-                </div>
-
-                <div class="terminal-line">
-                    &nbsp;&nbsp;location:
-                    <span class="green">
-                        "Bali, Indonesia"
-                    </span>,
-                </div>
-
-                <div class="terminal-line">
-                    &nbsp;&nbsp;focus:
-                    <span class="green">
-                        "Software & AI"
-                    </span>,
-                </div>
-
-                <div class="terminal-line">
-                    &nbsp;&nbsp;coffee:
-                    <span class="blue">
-                        true
-                    </span>
-                </div>
-
-                <div class="terminal-line">
-                    };
-                </div>
-
+                <div class="terminal-line"><span class="purple">const</span> developer = {</div>
+                <div class="terminal-line">&nbsp;&nbsp;name: <span class="green">"Muhammad Agriyansyah"</span>,</div>
+                <div class="terminal-line">&nbsp;&nbsp;location: <span class="green">"Bali, Indonesia"</span>,</div>
+                <div class="terminal-line">&nbsp;&nbsp;focus: <span class="green">"Software & AI"</span>,</div>
+                <div class="terminal-line">&nbsp;&nbsp;coffee: <span class="blue">true</span></div>
+                <div class="terminal-line">};</div>
                 <br>
-
-                <div class="terminal-line muted">
-                    // building useful things
-                </div>
-
+                <div class="terminal-line muted">// engineering scalable solutions</div>
             </div>
-
         </div>
-
     </div>
-
 </header>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
 <section id="about">
-
     <div class="container">
-
-        <div class="section-label">
-            01 / ABOUT
-        </div>
-
-        <h2 class="section-title">
-            Who I am
-        </h2>
-
+        <div class="section-label">01 / ABOUT</div>
+        <h2 class="section-title">Who I am</h2>
         <div class="about-grid">
-
             <div class="about-card">
-
-                <h3>
-                    Software Developer
-                </h3>
-
+                <h3>Software Developer</h3>
                 <p>
-                    I build web applications, backend systems,
-                    APIs, and database-driven solutions using
-                    technologies such as Java, PHP, Python,
-                    JavaScript, and MySQL.
+                    I design and implement web applications, backend APIs, and database-driven business systems utilizing Java, Python, PHP, JavaScript, and SQL.
                 </p>
-
             </div>
-
-
             <div class="about-card">
-
-                <h3>
-                    AI & Problem Solver
-                </h3>
-
+                <h3>AI Engineering</h3>
                 <p>
-                    I'm interested in applying AI and software
-                    engineering to practical problems. My recent
-                    work includes a real-time facial-expression
-                    based stress recognition system and seminar proposal projects.
+                    I build end-to-end intelligent systems, such as real-time facial expression and stress classification web services powered by computer vision and machine learning models.
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- =========================
-     EXPERIENCE
-========================= -->
 
 <section id="experience">
-
     <div class="container">
-
-        <div class="section-label">
-            02 / EXPERIENCE
-        </div>
-
-        <h2 class="section-title">
-            Experience
-        </h2>
-
-
+        <div class="section-label">02 / EXPERIENCE</div>
+        <h2 class="section-title">Experience</h2>
         <div class="timeline">
-
             <div class="timeline-item">
-
-                <div class="timeline-date">
-                    MAR 2025 — JUN 2025
-                </div>
-
-                <h3>
-                    Software Developer Intern
-                </h3>
-
-                <div class="timeline-company">
-                    PT Dimata Sora Jayate
-                </div>
-
+                <div class="timeline-date">MAR 2025 — JUN 2025</div>
+                <h3>Software Developer Intern</h3>
+                <div class="timeline-company">PT Dimata Sora Jayate</div>
                 <ul>
-
-                    <li>
-                        Developed a Plant Management Information
-                        System using Java, JSP/Servlets, and MySQL.
-                    </li>
-
-                    <li>
-                        Implemented CRUD functionality,
-                        search, filtering, and pagination.
-                    </li>
-
-                    <li>
-                        Integrated web application modules
-                        with MySQL using JDBC.
-                    </li>
-
-                    <li>
-                        Performed testing, debugging,
-                        and database troubleshooting.
-                    </li>
-
+                    <li>Engineered key modules for an Enterprise Plant Management System using Java, JSP/Servlets, and MySQL.</li>
+                    <li>Designed modular CRUD mechanisms, complex search filters, and database pagination.</li>
+                    <li>Integrated application layers with enterprise relational databases via JDBC.</li>
+                    <li>Performed system testing, code optimization, and database troubleshooting.</li>
                 </ul>
-
             </div>
-
-
             <div class="timeline-item">
-
-                <div class="timeline-date">
-                    2022 — 2026
-                </div>
-
-                <h3>
-                    Informatics Engineering
-                </h3>
-
-                <div class="timeline-company">
-                    Institut Bisnis dan Teknologi Indonesia
-                    (INSTIKI)
-                </div>
-
-                <p class="muted">
-                    Bachelor's Degree in Informatics Engineering.
-                </p>
-
+                <div class="timeline-date">2022 — 2026</div>
+                <h3>Informatics Engineering</h3>
+                <div class="timeline-company">Institut Bisnis dan Teknologi Indonesia (INSTIKI)</div>
+                <p class="muted">Bachelor's Degree in Informatics Engineering.</p>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
 <section id="projects">
-
     <div class="container">
-
-        <div class="section-label">
-            03 / PROJECTS
-        </div>
-
-        <h2 class="section-title">
-            Things I've built
-        </h2>
-
+        <div class="section-label">03 / PROJECTS</div>
+        <h2 class="section-title">Things I've built</h2>
 
         <div class="projects">
 
-
-            <!-- FEATURED / 01 -->
-
+            <!-- FEATURED PROJECT 01 -->
             <article class="project project-featured">
-                <div>
-                    <div class="project-number">
-                        FEATURED PROJECT / 01
-                    </div>
-
-                    <h3>
-                        Real-Time Stress Recognition AI
-                    </h3>
-
-                    <p>
-                        A real-time AI application that analyzes
-                        facial expressions through a webcam to
-                        estimate stress levels. The system combines
-                        CNN-based image classification with MediaPipe
-                        face detection, fuzzy logic, smoothing,
-                        hysteresis, and a FastAPI backend.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">Keras</span>
-                        <span class="tag">CNN</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">MediaPipe</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Fuzzy Logic</span>
-                    </div>
+                <div class="project-number">FEATURED PROJECT / 01</div>
+                <h3>Real-Time Stress Recognition AI</h3>
+                <p>
+                    A real-time AI system analyzing live facial expressions to estimate stress levels. Combines CNN image classification, MediaPipe facial landmark tracking, and fuzzy logic, deployed over a high-performance FastAPI backend.
+                </p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">CNN</span>
+                    <span class="tag">FastAPI</span>
                 </div>
-
                 <div class="project-links">
-                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">
-                        GitHub Repo ↗
-                    </a>
+                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">GitHub Repo ↗</a>
                 </div>
             </article>
 
-
-            <!-- PROJECT / 02 -->
-
+            <!-- PROJECT 02 (NDA PROTECTED) -->
             <article class="project">
-                <div>
-                    <div class="project-number">
-                        PROJECT / 02
-                    </div>
-
-                    <h3>
-                        Plant Management System
-                    </h3>
-
-                    <p>
-                        A web-based business information system
-                        developed during my internship to manage
-                        plant-related operational data.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">JSP/Servlets</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">JDBC</span>
-                    </div>
+                <div class="project-number">PROJECT / 02</div>
+                <h3>Enterprise Plant MIS</h3>
+                <p>
+                    A full-scale operational Management Information System engineered during internship to streamline plant management workflows and relational data.
+                </p>
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">JSP / Servlet</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">JDBC</span>
                 </div>
-
                 <div class="project-links">
-                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">
-                        GitHub Repo ↗
-                    </a>
+                    <span class="nda-badge">🔒 Enterprise Code Base (Under NDA)</span>
                 </div>
             </article>
 
-
-            <!-- PROJECT / 03 -->
-
+            <!-- PROJECT 03 (NEW LIVE APP) -->
             <article class="project">
-                <div>
-                    <div class="project-number">
-                        PROJECT / 03
-                    </div>
-
-                    <h3>
-                        MindSync AI (Seminar Proposal)
-                    </h3>
-
-                    <p>
-                        A web-based application currently structured as an academic seminar proposal. Focuses on intelligent pattern processing and modern UI mockups built via Figma.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">Web App</span>
-                        <span class="tag">AI Integration</span>
-                        <span class="tag">Figma</span>
-                    </div>
+                <div class="project-number">PROJECT / 03</div>
+                <h3>Atmosphere Weather Dashboard</h3>
+                <p>
+                    A sleek, API-driven weather dashboard providing real-time environmental metrics, wind speeds, and atmospheric data using asynchronous REST API calls.
+                </p>
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">HTML5</span>
                 </div>
-
                 <div class="project-links">
-                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">
-                        Documentation ↗
-                    </a>
+                    <a href="https://github.com/Shin1745/weather-dashboard" target="_blank" class="project-link">GitHub Repo ↗</a>
+                    <a href="https://shin1745.github.io/weather-dashboard/" target="_blank" class="project-link">Live Demo ↗</a>
                 </div>
             </article>
 
-
-            <!-- PROJECT / 04 -->
-
+            <!-- PROJECT 04 -->
             <article class="project">
-                <div>
-                    <div class="project-number">
-                        PROJECT / 04
-                    </div>
-
-                    <h3>
-                        Geospatial Thematic Mapping
-                    </h3>
-
-                    <p>
-                        A quantitative spatial analysis project utilizing ArcMap. Processed downloaded shapefiles to generate clean regional demographic and environmental thematic maps.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">ArcMap</span>
-                        <span class="tag">GIS</span>
-                        <span class="tag">Spatial Data</span>
-                    </div>
+                <div class="project-number">PROJECT / 04</div>
+                <h3>Geospatial Thematic Mapping</h3>
+                <p>
+                    A quantitative spatial analysis project utilizing shapefiles and spatial datasets to produce geographic visualizations and data charts.
+                </p>
+                <div class="tags">
+                    <span class="tag">ArcMap</span>
+                    <span class="tag">GIS</span>
+                    <span class="tag">Spatial Data</span>
                 </div>
-
                 <div class="project-links">
-                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">
-                        View Details ↗
-                    </a>
+                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">Project Details ↗</a>
+                </div>
+            </article>
+
+            <!-- PROJECT 05 -->
+            <article class="project">
+                <div class="project-number">PROJECT / 05</div>
+                <h3>Developer Web Portfolio</h3>
+                <p>
+                    Personal portfolio website featuring dark terminal aesthetic styling, responsive component architecture, and high performance.
+                </p>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">GitHub Repo ↗</a>
                 </div>
             </article>
 
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =========================
-     SKILLS
-========================= -->
-
 <section id="skills">
-
     <div class="container">
-
-        <div class="section-label">
-            04 / SKILLS
-        </div>
-
-        <h2 class="section-title">
-            My toolkit
-        </h2>
-
-
+        <div class="section-label">04 / SKILLS</div>
+        <h2 class="section-title">My toolkit</h2>
         <div class="skills">
-
-
             <div class="skill-group">
-
-                <h3>
-                    Programming
-                </h3>
-
+                <h3>Languages</h3>
                 <div class="skill-list">
-
                     <span class="skill">Java</span>
                     <span class="skill">Python</span>
                     <span class="skill">PHP</span>
                     <span class="skill">JavaScript</span>
                     <span class="skill">SQL</span>
-
                 </div>
-
             </div>
-
-
             <div class="skill-group">
-
-                <h3>
-                    Web & Backend
-                </h3>
-
+                <h3>Web & Backend</h3>
                 <div class="skill-list">
-
-                    <span class="skill">HTML/CSS</span>
-                    <span class="skill">Bootstrap</span>
-                    <span class="skill">Laravel</span>
-                    <span class="skill">JSP</span>
+                    <span class="skill">HTML / CSS</span>
                     <span class="skill">FastAPI</span>
-
+                    <span class="skill">Laravel</span>
+                    <span class="skill">MySQL / JDBC</span>
                 </div>
-
             </div>
-
-
             <div class="skill-group">
-
-                <h3>
-                    AI & Tools
-                </h3>
-
+                <h3>AI & Technical Tools</h3>
                 <div class="skill-list">
-
                     <span class="skill">TensorFlow</span>
                     <span class="skill">OpenCV</span>
                     <span class="skill">MediaPipe</span>
-                    <span class="skill">ArcMap</span>
-                    <span class="skill">Figma</span>
-                    <span class="skill">Git/GitHub</span>
-
+                    <span class="skill">ArcMap / GIS</span>
+                    <span class="skill">Git & GitHub</span>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
 
 <section id="contact">
-
     <div class="container">
-
         <div class="contact">
-
-            <div class="section-label">
-                05 / CONTACT
-            </div>
-
-            <h2>
-                Let's build something.
-            </h2>
-
+            <div class="section-label">05 / CONTACT</div>
+            <h2>Let's build something.</h2>
             <p>
-                I'm currently open to software development,
-                AI/automation, backend, and web development
-                opportunities.
+                I'm open to software engineering, backend development, web engineering, and AI development opportunities.
             </p>
-
-            <div class="buttons"
-                 style="justify-content:center;">
-
-                <a
-                    class="btn btn-primary"
-                    href="mailto:jjbb3175@gmail.com"
-                >
-                    Email Me
-                </a>
-
-                <a
-                    class="btn btn-secondary"
-                    href="https://github.com/Shin1745"
-                    target="_blank"
-                >
-                    GitHub
-                </a>
-
-                <a
-                    class="btn btn-secondary"
-                    href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/"
-                    target="_blank"
-                >
-                    LinkedIn
-                </a>
-
+            <div class="buttons" style="justify-content:center;">
+                <a class="btn btn-primary" href="mailto:jjbb3175@gmail.com">Email Me</a>
+                <a class="btn btn-secondary" href="https://github.com/Shin1745" target="_blank">GitHub</a>
+                <a class="btn btn-secondary" href="https://www.linkedin.com/in/muhammad-agriyansyah-22b861346/" target="_blank">LinkedIn</a>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
-
     <div class="container">
-
         © 2026 Muhammad Agriyansyah · Built with HTML & CSS
-
     </div>
-
 </footer>
-
 
 </body>
 </html>
