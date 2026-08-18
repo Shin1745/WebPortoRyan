@@ -16,6 +16,11 @@
           rel="stylesheet">
 
     <style>
+
+        /* =========================
+            GLOBAL
+        ========================= */
+
         :root {
             --bg: #08090d;
             --bg-soft: #0e1016;
@@ -53,6 +58,11 @@
             margin: auto;
         }
 
+
+        /* =========================
+            BACKGROUND
+        ========================= */
+
         body::before {
             content: "";
             position: fixed;
@@ -64,19 +74,27 @@
             z-index: -1;
         }
 
+
+        /* =========================
+            NAVBAR
+        ========================= */
+
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 100;
+
             background: rgba(8, 9, 13, 0.75);
             backdrop-filter: blur(15px);
+
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .nav-inner {
             height: 70px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -103,6 +121,11 @@
         }
 
         .nav-links a:hover { color: white; }
+
+
+        /* =========================
+            HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
@@ -176,6 +199,11 @@
             border-color: var(--accent);
         }
 
+
+        /* =========================
+            TERMINAL
+        ========================= */
+
         .terminal {
             background: #0b0d12;
             border: 1px solid var(--border);
@@ -211,6 +239,11 @@
         .blue { color: var(--blue); }
         .muted { color: var(--muted); }
 
+
+        /* =========================
+            SECTION
+        ========================= */
+
         section { padding: 100px 0; }
 
         .section-label {
@@ -225,6 +258,11 @@
             margin-bottom: 50px;
             letter-spacing: -1px;
         }
+
+
+        /* =========================
+            ABOUT
+        ========================= */
 
         .about-grid {
             display: grid;
@@ -241,6 +279,11 @@
 
         .about-card h3 { margin-bottom: 12px; }
         .about-card p { color: var(--muted); }
+
+
+        /* =========================
+            EXPERIENCE
+        ========================= */
 
         .timeline {
             border-left: 1px solid var(--border);
@@ -281,6 +324,11 @@
             color: var(--muted);
             padding-left: 20px;
         }
+
+
+        /* =========================
+            PROJECTS
+        ========================= */
 
         .projects {
             display: grid;
@@ -369,6 +417,129 @@
             font-style: italic;
         }
 
+
+        /* =========================
+            PROJECT MODAL
+        ========================= */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 5, 8, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            max-width: 800px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-close:hover { color: white; }
+
+        .modal-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .metric-box {
+            background: #08090d;
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-val {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .metric-lbl {
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .screenshot-container {
+            width: 100%;
+            height: 280px;
+            background: #08090d;
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pipeline-steps {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .pipeline-step {
+            background: #181b24;
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            color: var(--accent-light);
+        }
+
+
+        /* =========================
+            SKILLS
+        ========================= */
+
         .skills {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -398,6 +569,11 @@
             color: var(--muted);
         }
 
+
+        /* =========================
+            CONTACT
+        ========================= */
+
         .contact {
             text-align: center;
             max-width: 700px;
@@ -407,6 +583,11 @@
         .contact h2 { font-size: 48px; margin-bottom: 20px; }
         .contact p { color: var(--muted); margin-bottom: 30px; }
 
+
+        /* =========================
+            FOOTER
+        ========================= */
+
         footer {
             border-top: 1px solid var(--border);
             padding: 30px 0;
@@ -415,20 +596,29 @@
             font-size: 13px;
         }
 
+
+        /* =========================
+            RESPONSIVE
+        ========================= */
+
         @media (max-width: 800px) {
             .nav-links { display: none; }
             .hero-grid { grid-template-columns: 1fr; }
             .about-grid { grid-template-columns: 1fr; }
             .projects { grid-template-columns: 1fr; }
             .project-featured { grid-column: span 1; }
+            .modal-metrics { grid-template-columns: 1fr; }
             .skills { grid-template-columns: 1fr; }
             .hero h1 { letter-spacing: -2px; }
             section { padding: 70px 0; }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <nav>
     <div class="container nav-inner">
@@ -442,6 +632,7 @@
         </ul>
     </div>
 </nav>
+
 
 <header class="hero">
     <div class="container hero-grid">
@@ -476,6 +667,7 @@
     </div>
 </header>
 
+
 <section id="about">
     <div class="container">
         <div class="section-label">01 / ABOUT</div>
@@ -496,6 +688,7 @@
         </div>
     </div>
 </section>
+
 
 <section id="experience">
     <div class="container">
@@ -523,6 +716,7 @@
     </div>
 </section>
 
+
 <section id="projects">
     <div class="container">
         <div class="section-label">03 / PROJECTS</div>
@@ -535,7 +729,7 @@
                 <div class="project-number">FEATURED PROJECT / 01</div>
                 <h3>Real-Time Stress Recognition AI</h3>
                 <p>
-                    A real-time AI system analyzing live facial expressions to estimate stress levels. Combines CNN image classification, MediaPipe facial landmark tracking, and fuzzy logic, deployed over a high-performance FastAPI backend.
+                    A real-time AI application that analyzes facial expressions through a webcam to estimate stress levels. Combines CNN image classification, MediaPipe facial landmark tracking, and fuzzy logic smoothing.
                 </p>
                 <div class="tags">
                     <span class="tag">Python</span>
@@ -545,7 +739,9 @@
                     <span class="tag">FastAPI</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Shin1745" target="_blank" class="project-link">GitHub Repo ↗</a>
+                    <button class="project-link" style="background:none; border:none; cursor:pointer;" onclick="openModal()">
+                        View Case Study & Screenshots ↗
+                    </button>
                 </div>
             </article>
 
@@ -567,7 +763,7 @@
                 </div>
             </article>
 
-            <!-- PROJECT 03 (NEW LIVE APP) -->
+            <!-- PROJECT 03 (LIVE APP) -->
             <article class="project">
                 <div class="project-number">PROJECT / 03</div>
                 <h3>Atmosphere Weather Dashboard</h3>
@@ -624,6 +820,7 @@
     </div>
 </section>
 
+
 <section id="skills">
     <div class="container">
         <div class="section-label">04 / SKILLS</div>
@@ -662,6 +859,7 @@
     </div>
 </section>
 
+
 <section id="contact">
     <div class="container">
         <div class="contact">
@@ -679,11 +877,81 @@
     </div>
 </section>
 
+
 <footer>
     <div class="container">
         © 2026 Muhammad Agriyansyah · Built with HTML & CSS
     </div>
 </footer>
+
+
+<!-- CASE STUDY MODAL -->
+<div class="modal-overlay" id="caseStudyModal">
+    <div class="modal-container">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        
+        <div class="project-number">SKRIPSI CASE STUDY</div>
+        <h2>Real-Time Stress Recognition AI</h2>
+        <p style="color: var(--muted); margin-top: 5px;">
+            Webcam-based facial expression analysis & stress level classification system.
+        </p>
+
+        <!-- Metric Badges -->
+        <div class="modal-metrics">
+            <div class="metric-box">
+                <div class="metric-val">~30 FPS</div>
+                <div class="metric-lbl">Processing Speed</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-val">CNN + Fuzzy</div>
+                <div class="metric-lbl">Model Architecture</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-val">&lt; 50ms</div>
+                <div class="metric-lbl">Inference Latency</div>
+            </div>
+        </div>
+
+        <!-- System Pipeline -->
+        <h4 style="margin-top: 25px;">System Pipeline</h4>
+        <div class="pipeline-steps">
+            <span class="pipeline-step">1. Video Input</span> →
+            <span class="pipeline-step">2. MediaPipe Detection</span> →
+            <span class="pipeline-step">3. CNN Emotion Classifier</span> →
+            <span class="pipeline-step">4. Fuzzy Logic Smoothing</span> →
+            <span class="pipeline-step">5. UI Feedback</span>
+        </div>
+
+        <!-- Screenshots Box -->
+        <h4 style="margin-top: 25px;">Interface Preview</h4>
+        <div class="screenshot-container">
+            <!-- Replace the text below with your image tag once uploaded: -->
+            <!-- <img src="assets/stress-ai-demo.jpg" alt="App Screenshot"> -->
+            <span>📷 Drop your app screenshot here</span>
+            <span style="font-size:12px; margin-top:5px;">(Place screenshot image inside the screenshot-container div)</span>
+        </div>
+
+        <h4>Key Engineering Highlights</h4>
+        <ul style="color: var(--muted); padding-left: 20px; margin-top: 10px;">
+            <li>Integrated MediaPipe facial bounding to isolate face ROIs before passing to the model.</li>
+            <li>Implemented temporal smoothing and hysteresis algorithms to eliminate frame-by-frame emotion flickering.</li>
+            <li>Built async REST endpoints using FastAPI for high-throughput frame transmission.</li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    function openModal() {
+        document.getElementById('caseStudyModal').classList.add('active');
+    }
+    function closeModal() {
+        document.getElementById('caseStudyModal').classList.remove('active');
+    }
+    document.getElementById('caseStudyModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+</script>
 
 </body>
 </html>
